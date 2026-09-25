@@ -3,77 +3,73 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8fafb">
-  <meta name="description" content="A support-enhanced granular-jamming gripper pairs passive, shape-adaptive grasping with learned reaching on a continuum manipulator. Watch the experiments.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="A support-enhanced granular-jamming gripper pairs passive grasp adaptation with learned reaching on a continuum manipulator. Watch the experiments.">
   <title>Support-Enhanced Granular-Jamming Gripper · Project Page</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23102b40'/%3E%3Cpath d='M17 32a15 15 0 0 1 30 0M17 32a15 15 0 0 0 30 0' fill='none' stroke='%23d3e8ee' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23d78d52'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23172033'/%3E%3Cpath d='M17 32a15 15 0 0 1 30 0M17 32a15 15 0 0 0 30 0' fill='none' stroke='%23ffffff' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%232f70b7'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a href="#top" class="brand" aria-label="Gripper project page home"><span class="brand-mark" aria-hidden="true">◉</span> GRANULAR GRIPPER</a>
-      <nav class="site-nav" aria-label="Page sections"><a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#experiments">Experiments</a><a href="#results">Results</a><a href="#acknowledgments">Acknowledgments</a><a href="#citation">Citation</a></nav>
-    </div>
-  </header>
+  <header class="site-header"><div class="wrap header-inner">
+    <a href="#top" class="brand" aria-label="Gripper project page home">GRANULAR GRIPPER</a>
+    <nav class="site-nav" aria-label="Page sections"><a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#experiments">Experiments</a><a href="#citation">Citation</a></nav>
+  </div></header>
   <main id="top">
-    <div class="hero"><div class="wrap">
-      <div class="hero-copy">
-        <div class="eyebrow">Continuum manipulation · Research project</div>
-        <h1>A Support-Enhanced Granular-Jamming Gripper for RL-based Grasping with Continuum Manipulators</h1>
-        <p class="authors"><span>Danyu Liu</span><span>Tianlin Zhang</span><span>Wei Chen</span><span>Wei Tang</span><span>Kecheng Qin</span><span>Zhongyu Li</span></p>
-        <p class="affiliations">Hong Kong Embodied AI Lab · The Chinese University of Hong Kong · Zhejiang University</p>
-        <p class="hero-summary">Learned reaching brings the robot to the object. A compliant, support-enhanced granular gripper forms the grasp and holds it after vacuum is applied.</p>
-        <div class="actions"><a class="button button-primary" href="#video">▶&nbsp; Watch full video</a><a class="button button-secondary" href="#experiments">Explore experiments ↗</a></div>
-      </div>
-      <div id="video" class="hero-media"><div class="video-shell"><video controls playsinline preload="none" poster="assets/hero.jpg" aria-label="Full robot experiment video"><source src="assets/full-demo.mp4" type="video/mp4">Your browser does not support HTML video.</video></div><div class="video-caption"><strong>Project video · Full demonstration</strong><span>Pose errors · Shape adaptation · Sim-to-real reaching · Consecutive pick-and-release</span></div></div>
-    </div></div>
-    <section id="abstract" class="section abstract"><div class="wrap abstract-grid"><div><div class="eyebrow">Overview</div><h2>Abstract</h2></div><div class="abstract-copy">
-      <p>Continuum manipulators can move through constrained spaces, but tendon friction, material deformation, and contact make precise end-effector placement difficult. A grasping system must still work when the final position and orientation are imperfect.</p>
-      <p>We combine a support-enhanced granular-jamming gripper with a vision-guided, reinforcement-learning reaching policy. Before evacuation, the membrane and mobile particles deform around the object while an internal support encourages lateral enclosure. Vacuum then locks the grasp and provides a direct path to carry the load. The policy controls reaching through absolute tendon-length commands; grasp formation is passive. The video demonstrates contact-error tolerance, several object shapes, simulation-to-real reaching, varied target heights and positions, and consecutive pick-and-release trials.</p>
-    </div></div></section>
-    <section id="method" class="section method"><div class="wrap"><div class="method-heading"><div class="eyebrow">System overview</div><h2>Learned reaching. Mechanical adaptation at contact.</h2><p>The system separates the job of arriving near an object from the job of forming and holding a grasp.</p></div>
+    <section class="hero"><div class="wrap hero-copy">
+      <h1>A Support-Enhanced Granular-Jamming Gripper for RL-based Grasping with Continuum Manipulators</h1>
+      <p class="authors"><span>Danyu Liu</span><span>Tianlin Zhang</span><span>Wei Chen</span><span>Wei Tang</span><span>Kecheng Qin</span><span>Zhongyu Li</span></p>
+      <p class="affiliations">Hong Kong Embodied AI Lab · The Chinese University of Hong Kong · Zhejiang University</p>
+      <div class="actions"><a class="button button-primary" href="#video">Video</a><a class="button" href="#experiments">Experiments</a></div>
+    </div></section>
+
+    <section id="video" class="section lead-video section-soft"><div class="wrap video-wrap">
+      <div class="video-shell"><video controls playsinline preload="none" poster="assets/hero.jpg" aria-label="Full robot experiment video"><source src="assets/full-demo.mp4" type="video/mp4">Your browser does not support HTML video.</video></div>
+      <p class="caption">Full experiment video</p>
+    </div></section>
+
+    <section id="abstract" class="section abstract section-soft"><div class="wrap narrow">
+      <h2>Abstract</h2>
+      <p>Continuum robots can reach near an object without placing the gripper perfectly. Our vision-guided PPO policy controls reaching, while a support-enhanced granular-jamming gripper adapts to contact errors. Its flexible membrane and particles conform around the object, an internal rod promotes lateral enclosure, and vacuum locks the grasp for lift and transfer.</p>
+    </div></section>
+
+    <section id="method" class="section method"><div class="wrap">
+      <h2>Method</h2>
       <div class="workflow" aria-label="Robot manipulation sequence">
-        <div class="step"><span class="step-number">01 / SENSE</span><h3>Locate the target</h3><p>Visual feedback estimates the gripper and target positions.</p></div>
-        <div class="step"><span class="step-number">02 / REACH</span><h3>Command the tendons</h3><p>A history-based PPO policy outputs absolute tendon lengths to approach and hold near the object.</p></div>
-        <div class="step"><span class="step-number">03 / CONFORM</span><h3>Enclose the object</h3><p>The flexible membrane and grains reshape under contact; the internal rod supports lateral wrapping.</p></div>
-        <div class="step"><span class="step-number">04 / HOLD</span><h3>Apply vacuum</h3><p>Jamming stiffens the gripper for lift and transfer. Re-inflation releases the object.</p></div>
-      </div><p class="method-note">The learned controller handles reaching; the gripper's passive mechanics accommodate the remaining contact error.</p>
-    </div></section>
-    <section id="experiments" class="section experiments"><div class="wrap"><div class="section-heading"><div><div class="eyebrow">Real-robot experiments</div><h2>Watch the experiments</h2></div><p>Each clip is taken from the project video. The panels follow the same sequence as the full film.</p></div>
-      <div class="group"><div class="group-heading"><span>01</span><h3>Physical grasp adaptation</h3></div><div class="cards">
-        <article class="video-card"><video controls playsinline preload="none" poster="assets/motivation.jpg" aria-label="Pose-error comparison video"><source src="assets/motivation.mp4" type="video/mp4"></video><div class="card-body"><span class="card-label">Motivation · 00:11:10–00:33:21</span><h4>Pose errors at contact</h4><p>Side-by-side trials contrast a rigid gripper under position and orientation mismatch with the compliant gripper's ability to form contact in the shown setup.</p></div></article>
-        <article class="video-card"><video controls playsinline preload="none" poster="assets/shapes.jpg" aria-label="Shape adaptability video"><source src="assets/shapes.mp4" type="video/mp4"></video><div class="card-body"><span class="card-label">Grasping · 00:34:23–00:52:10</span><h4>Different object shapes</h4><p>Representative grasps of a cube, cylinder, hexagonal prism, and sphere show the membrane adapting to distinct geometries.</p></div></article>
-      </div></div>
-      <div class="group"><div class="group-heading"><span>02</span><h3>Learned reaching across conditions</h3></div><div class="cards three">
-        <article class="video-card"><video controls playsinline preload="none" poster="assets/sim-to-real.jpg" aria-label="Simulation and real robot reaching video"><source src="assets/sim-to-real.mp4" type="video/mp4"></video><div class="card-body"><span class="card-label">Transfer · 00:54:28–01:04:10</span><h4>Simulation and real robot</h4><p>Paired views show the simulated policy motion alongside real hardware. The reaching policy was deployed without physical fine-tuning.</p></div></article>
-        <article class="video-card"><video controls playsinline preload="none" poster="assets/heights.jpg" aria-label="Different target heights video"><source src="assets/heights.mp4" type="video/mp4"></video><div class="card-body"><span class="card-label">Reaching · 01:06:28–01:29:23</span><h4>Different heights</h4><p>The continuum arm reaches toward targets on two platforms of different heights.</p></div></article>
-        <article class="video-card"><video controls playsinline preload="none" poster="assets/positions.jpg" aria-label="Different target positions video"><source src="assets/positions.mp4" type="video/mp4"></video><div class="card-body"><span class="card-label">Reaching · 01:30:24–01:48:14</span><h4>Different positions</h4><p>An overhead view shows repeated target approaches at different positions around the robot.</p></div></article>
-      </div></div>
-    </div></section>
-    <section id="demonstration" class="section feature"><div class="wrap feature-layout"><div class="video-shell"><video controls playsinline preload="none" poster="assets/pick-and-release.jpg" aria-label="Consecutive pick and release demonstration video"><source src="assets/pick-and-release.mp4" type="video/mp4"></video></div><div><div class="eyebrow">03 / Integrated system · 01:49:15–02:08:20</div><h2>Consecutive pick-and-release</h2><p>The closing demonstration brings together visual reaching, physical grasp formation, lift, transfer, and pneumatic release. Two sequential trials use a cube and a hexagonal prism at different positions.</p><ul class="feature-list"><li><strong>Approach</strong> Learned tendon control moves to the target.</li><li><strong>Grasp</strong> The gripper conforms before vacuum locks the object.</li><li><strong>Release</strong> The robot moves to the destination and releases the object.</li></ul></div></div></section>
-    <section id="results" class="section results"><div class="wrap"><div class="eyebrow">Measured results</div><h2>Grasping and reaching</h2><p class="results-intro">The manuscript reports ten lift-and-hold trials per gripper condition and sixteen physical reaching rollouts. The videos above show representative trials.</p>
-      <div class="result-grid">
-        <div class="result"><span>Support rod</span><b>10/10</b><p>Successful grasps with the internal support, compared with <strong>6/10</strong> without it.</p></div>
-        <div class="result"><span>Physical reaching</span><b>4.23 cm</b><p>Terminal RMSE over 16 zero-shot physical rollouts; simulation RMSE was <strong>2.51 cm</strong>.</p></div>
-      </div>
-      <div class="shape-results"><div><h3>Across object shapes</h3><p>Success means lifting the object clear of the table and holding it. Each shape was tested ten times.</p><p class="results-footnote">The project video shows representative trials for the first four shapes; the triangular pyramid is included here from the manuscript's characterization.</p></div>
-        <div class="bars" aria-label="Grasp success rates by shape">
-          <div class="bar-row"><span>Sphere</span><div class="track"><i style="width:100%"></i></div><strong>10/10</strong></div>
-          <div class="bar-row"><span>Hexagonal prism</span><div class="track"><i style="width:90%"></i></div><strong>9/10</strong></div>
-          <div class="bar-row"><span>Cylinder</span><div class="track"><i style="width:80%"></i></div><strong>8/10</strong></div>
-          <div class="bar-row"><span>Cube</span><div class="track"><i style="width:80%"></i></div><strong>8/10</strong></div>
-          <div class="bar-row"><span>Triangular pyramid</span><div class="track"><i style="width:10%"></i></div><strong>1/10</strong></div>
-        </div>
+        <div class="step"><span class="step-number">01</span><h3>Reach</h3><p>Vision and PPO guide the tendons toward the object.</p></div>
+        <div class="step"><span class="step-number">02</span><h3>Conform</h3><p>The membrane, particles, and support rod adapt to contact.</p></div>
+        <div class="step"><span class="step-number">03</span><h3>Grasp and release</h3><p>Vacuum locks the grasp; inflation releases the object.</p></div>
       </div>
     </div></section>
-    <section id="acknowledgments" class="section acknowledgments"><div class="wrap abstract-grid"><div><div class="eyebrow">Support</div><h2>Acknowledgments</h2></div><div class="abstract-copy"><p>This work was in part supported by the InnoHK initiative of the Innovation and Technology Commission of the Hong Kong Special Administrative Region Government via the Hong Kong Centre for Logistics Robotics. This work was also in part supported by the Chinese University of Hong Kong, Zhejiang University, and National Natural Science Foundation of China.</p></div></div></section>
-    <section id="citation" class="section citation"><div class="wrap"><div class="citation-bar"><div><div class="eyebrow">Reference</div><h2>Citation</h2></div><button class="copy" id="copy-citation" type="button" aria-label="Copy BibTeX citation">Copy BibTeX</button></div><pre id="bibtex">@misc{liu2026supportenhanced,
+
+    <section id="experiments" class="section experiments section-soft"><div class="wrap">
+      <h2>Experiments</h2>
+      <div class="group"><h3>Grasp adaptation</h3><div class="cards two">
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/motivation.jpg" aria-label="Pose-error comparison video"><source src="assets/motivation.mp4" type="video/mp4"></video><div class="card-body"><h4>Pose errors at contact</h4><span class="card-label">00:11:10–00:33:21</span></div></article>
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/shapes.jpg" aria-label="Shape adaptability video"><source src="assets/shapes.mp4" type="video/mp4"></video><div class="card-body"><h4>Different object shapes</h4><span class="card-label">00:34:23–00:52:10</span></div></article>
+      </div></div>
+      <div class="group"><h3>Learned reaching</h3><div class="cards three">
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/sim-to-real.jpg" aria-label="Simulation and real robot reaching video"><source src="assets/sim-to-real.mp4" type="video/mp4"></video><div class="card-body"><h4>Simulation and real robot</h4><span class="card-label">00:54:28–01:04:10</span></div></article>
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/heights.jpg" aria-label="Different target heights video"><source src="assets/heights.mp4" type="video/mp4"></video><div class="card-body"><h4>Different heights</h4><span class="card-label">01:06:28–01:29:23</span></div></article>
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/positions.jpg" aria-label="Different target positions video"><source src="assets/positions.mp4" type="video/mp4"></video><div class="card-body"><h4>Different positions</h4><span class="card-label">01:30:24–01:48:14</span></div></article>
+      </div></div>
+      <div class="group"><h3>Full sequence</h3><div class="cards two">
+        <article class="video-card"><video controls playsinline preload="none" poster="assets/pick-and-release.jpg" aria-label="Consecutive pick and release demonstration video"><source src="assets/pick-and-release.mp4" type="video/mp4"></video><div class="card-body"><h4>Consecutive pick-and-release</h4><span class="card-label">01:49:15–02:08:20</span></div></article>
+      </div></div>
+    </div></section>
+
+    <section id="acknowledgments" class="section acknowledgments"><div class="wrap narrow">
+      <h2>Acknowledgments</h2>
+      <p>This work was in part supported by the InnoHK initiative of the Innovation and Technology Commission of the Hong Kong Special Administrative Region Government via the Hong Kong Centre for Logistics Robotics. This work was also in part supported by the Chinese University of Hong Kong, Zhejiang University, and National Natural Science Foundation of China.</p>
+    </div></section>
+    <section id="citation" class="section citation section-soft"><div class="wrap narrow">
+      <div class="citation-bar"><h2>Citation</h2><button class="copy" id="copy-citation" type="button" aria-label="Copy BibTeX citation">Copy BibTeX</button></div>
+      <pre id="bibtex">@misc{liu2026supportenhanced,
   title={A Support-Enhanced Granular-Jamming Gripper for RL-based Grasping with Continuum Manipulators},
   author={Danyu Liu and Tianlin Zhang and Wei Chen and Wei Tang and Kecheng Qin and Zhongyu Li},
   year={2026},
   note={Project page}
-}</pre></div></section>
+}</pre>
+    </div></section>
   </main>
   <footer><div class="wrap footer-inner"><span>Support-Enhanced Granular-Jamming Gripper</span><a href="#top">Back to top ↑</a></div></footer>
   <script src="script.js" defer></script>
