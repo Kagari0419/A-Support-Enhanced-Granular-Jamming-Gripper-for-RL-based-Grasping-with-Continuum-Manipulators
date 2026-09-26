@@ -53,3 +53,44 @@ copyButton.addEventListener('click', async () => {
   }
   setTimeout(() => { copyButton.textContent = 'Copy BibTeX'; }, 2200);
 });
+
+const methodCarousel = document.querySelector('[data-method-carousel]');
+if (methodCarousel) {
+  const track = methodCarousel.querySelector('.method-track');
+  const slides = [...methodCarousel.querySelectorAll('.method-slide')];
+  const tabs = [...document.querySelectorAll('.method-tabs .method-tab')];
+  const viewport = methodCarousel.querySelector('.method-viewport');
+  let current = 0;
+  let touchStartX = 0;
+
+  const showMethod = index => {
+    current = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    slides.forEach((slide, i) => {
+      slide.setAttribute('aria-hidden', String(i !== current));
+      slide.toggleAttribute('inert', i !== current);
+    });
+    tabs.forEach((tab, i) => {
+      tab.classList.toggle('is-active', i === current);
+      tab.setAttribute('aria-pressed', String(i === current));
+    });
+  };
+
+  methodCarousel.querySelector('.method-arrow.prev').addEventListener('click', () => showMethod(current - 1));
+  methodCarousel.querySelector('.method-arrow.next').addEventListener('click', () => showMethod(current + 1));
+  tabs.forEach((tab, i) => tab.addEventListener('click', () => showMethod(i)));
+  methodCarousel.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      showMethod(current + (event.key === 'ArrowRight' ? 1 : -1));
+    }
+  });
+  viewport.addEventListener('touchstart', event => {
+    touchStartX = event.changedTouches[0].screenX;
+  }, { passive: true });
+  viewport.addEventListener('touchend', event => {
+    const delta = event.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(delta) > 50) showMethod(current + (delta < 0 ? 1 : -1));
+  }, { passive: true });
+  showMethod(0);
+}
