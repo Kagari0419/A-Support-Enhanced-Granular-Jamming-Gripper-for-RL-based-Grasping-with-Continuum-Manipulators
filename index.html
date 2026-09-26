@@ -7,7 +7,7 @@
   <meta name="description" content="A support-enhanced granular-jamming gripper pairs passive grasp adaptation with learned reaching on a continuum manipulator. Watch the experiments.">
   <title>Support-Enhanced Granular-Jamming Gripper · Project Page</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23172033'/%3E%3Cpath d='M17 32a15 15 0 0 1 30 0M17 32a15 15 0 0 0 30 0' fill='none' stroke='%23ffffff' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%232f70b7'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
   <header class="site-header"><div class="wrap header-inner">
@@ -34,10 +34,15 @@
 
     <section id="method" class="section method"><div class="wrap">
       <h2>Method</h2>
-      <div class="workflow" aria-label="Robot manipulation sequence">
-        <div class="step"><span class="step-number">01</span><h3>Reach</h3><p>Vision and PPO guide the tendons toward the object.</p></div>
-        <div class="step"><span class="step-number">02</span><h3>Conform</h3><p>The membrane, particles, and support rod adapt to contact.</p></div>
-        <div class="step"><span class="step-number">03</span><h3>Grasp and release</h3><p>Vacuum locks the grasp; inflation releases the object.</p></div>
+      <div class="method-figures">
+        <figure class="method-figure method-structure">
+          <img src="assets/gripper-construction.jpg" width="722" height="928" loading="lazy" decoding="async" alt="Cutaway of the gripper showing the membrane, particles, and central support rod">
+          <figcaption>Support-enhanced gripper construction</figcaption>
+        </figure>
+        <figure class="method-figure method-operation">
+          <div class="sequence-scroll"><img src="assets/grasp-sequence.jpg" width="1168" height="292" loading="lazy" decoding="async" alt="Five frames showing contact, conformation, vacuum, jamming, and lifting"></div>
+          <figcaption>Grasping sequence <span class="mobile-hint">· Swipe to view all stages</span></figcaption>
+        </figure>
       </div>
     </div></section>
 
